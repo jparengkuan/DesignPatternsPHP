@@ -1,15 +1,11 @@
 {
-    "name": "domnikl/design-patterns-php",
+    "name": "jparengkuan/design-patterns-php",
     "description": "Sample code for several design patterns in PHP",
     "license": ["MIT"],
     "authors": [
         {
-            "name": "Dominik Liebler",
-            "email": "liebler.dominik@googlemail.com"
-        },
-        {
-            "name": "Borislav Sabev",
-            "email": "39cn9aod@mailer.me"
+            "name": "Jim Parengkuan",
+            "email": "jim.parengkuan@gmail.com"
         }
     ],
     "minimum-stability": "stable",
@@ -25,6 +21,8 @@
         "psalm/plugin-phpunit": "*"
     },
     "autoload": {
-        "classmap": ["Behavioral", "Creational", "Structural", "More"]
+        "psr-4": {
+            "DesignPatterns\\": ""
+        }
     }
 }

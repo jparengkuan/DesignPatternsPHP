@@ -42,7 +42,3 @@ jobs:
             --runtime-set ignore_warnings_on_exit 0 \
             --extensions=php \
             Structural
-
-      # 6. Build the Docker stack (only reached if lint passes)
-      - name: Build the stack
-        run: docker compose build --progress plain

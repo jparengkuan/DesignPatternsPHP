@@ -41,12 +41,12 @@ class FtpStorage implements StorageAdapter
      * @param bool   $passive  Whether to use passive mode (ignored).
      */
     public function __construct(
-        string $host        = 'dummy',
-        string $username    = 'anonymous',
-        string $password    = '',
-        int    $port        = 21,
-        int    $timeout     = 90,
-        bool   $passive     = true
+        string $host = 'dummy',
+        string $username = 'anonymous',
+        string $password = '',
+        int $port = 21,
+        int $timeout = 90,
+        bool $passive = true
     ) {
         // no real connection
     }

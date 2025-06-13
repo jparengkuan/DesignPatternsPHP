@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace DesignPatterns\Structural\Composite;
 
 /**
- * Class Bundle
+ * Class Response
  *
  * A composite “Buyable” that can hold products or other bundles
  * and apply a single percentage discount to the whole set.
@@ -22,7 +22,7 @@ class Bundle implements Buyable
     private array $items = [];
 
     /**
-     * Bundle constructor.
+     * Response constructor.
      *
      * @param string $title            Human-readable name shown in listings.
      * @param float  $discountPercent  Discount applied to the sum of child prices

@@ -8,7 +8,7 @@ namespace DesignPatterns\Structural\Composite;
  * Interface Buyable
  *
  * **Component** role in the Composite pattern used for the e-commerce example.
- * Anything that can be placed in a basket (a single Product *or* a Bundle that
+ * Anything that can be placed in a basket (a single Product *or* a Response that
  * aggregates other buyables) must implement this contract so the checkout code
  * can treat them uniformly.
  */

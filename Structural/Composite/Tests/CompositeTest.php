@@ -2,8 +2,10 @@
 
 declare(strict_types=1);
 
-namespace DesignPatterns\Structural\Composite;
+namespace DesignPatterns\Structural\Composite\Tests;
 
+use DesignPatterns\Structural\Composite\Bundle;
+use DesignPatterns\Structural\Composite\Product;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -58,12 +60,10 @@ final class CompositeTest extends TestCase
 
     public function testBundleAppliesPercentageDiscount(): void
     {
-        $bundle = new Bundle('Spring-Promo', 10);
-// –10 %
+        $bundle = new Bundle('Spring-Promo', 10); // –10 %
         $bundle->add(new Product('A', 'A', 40.00));
         $bundle->add(new Product('B', 'B', 60.00));
-        $this->assertSame(90.00, $bundle->getPrice());
-// 100 × 0.9
+        $this->assertSame(90.00, $bundle->getPrice()); // 100 × 0.9
     }
 
     public function testNestedBundlesCascadeAndRoundCorrectly(): void
@@ -71,15 +71,12 @@ final class CompositeTest extends TestCase
         // Child bundle (10 % off)
         $starter = new Bundle('Starter', 10);
         $starter->add(new Product('M', 'Mouse', 25.00));
-        $starter->add(new Product('K', 'Keyboard', 70.00));
-// 95 → 85.5
+        $starter->add(new Product('K', 'Keyboard', 70.00)); // 95 → 85.5
 
         // Parent bundle (15 % off)
         $pro = new Bundle('Pro Desk', 15);
-        $pro->add($starter);
-// 85.5
-        $pro->add(new Product('MON', 'Monitor', 150.00));
-// +150
+        $pro->add($starter); // 85.5
+        $pro->add(new Product('MON', 'Monitor', 150.00)); // +150
         // 235.5 × 0.85 = 200.175 → 200.18 (rounded)
 
         $this->assertSame(200.18, $pro->getPrice());

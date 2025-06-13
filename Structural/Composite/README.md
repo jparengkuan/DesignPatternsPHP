@@ -50,7 +50,7 @@ The \`\` suite verifies:
 Run tests:
 
 ```bash
-vendor/bin/phpunit Structural/Composite/CompositeTest.php
+vendor/bin/phpunit Structural/Composite/DecoratorTest.php
 ```
 
 ---
